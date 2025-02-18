@@ -1,42 +1,35 @@
 <?php
-//Générer un tableau avec 5 élèves et des notes entre 0 et 20.
-//Calculer la moyenne de chaque élève.
-//Afficher s’ils ont réussi (moyenne >= 10) ou échoué.
+// Generate an array with 5 students and grades between 0 and 20.
+// Calculate the average for each student.
+// Display whether they passed (average >= 10) or failed.
 
-// Liste des élèves
-$eleves = ["Sophia", "Batman", "Goku", "Reina", "TotallySpies"];
+// List of students
+$students = ["Sophia", "Batman", "Goku", "Reina", "TotallySpies"];
 
-// Tableau pour stocker les notes
-$notes = [];
-$moyennes = [];
+// Array to store the grades
+$grades = [];
+$averages = [];
 
-// Générer des notes pour chaque élève
-foreach ($eleves as $eleve) {
-    $Nombre_examens = rand(3, 8); // Chaque élève a entre 3 et 8 examens
-    $somme = 0;
+// Generate grades for each student
+foreach ($students as $student) {
+    $num_exams = rand(3, 8); // Each student has between 3 and 8 exams
+    $sum = 0;
 
-    for ($i = 0; $i < $Nombre_examens; $i++) {
-        $note = random_int(0, 20); // Génère une note aléatoire
-        $notes[$eleve][] = $note;  // Stocke la note
-        $somme += $note;           // Ajoute la note à la somme
+    for ($i = 0; $i < $num_exams; $i++) {
+        $grade = random_int(0, 20); // Generate a random grade
+        $grades[$student][] = $grade;  // Store the grade
+        $sum += $grade;                // Add the grade to the sum
     }
 
-    // Calcul de la moyenne
-    $moyenne = $somme / $Nombre_examens;
-    $moyennes[$eleve] = round($moyenne, 2); // Stocke la moyenne arrondie
+    // Calculate the average
+    $average = $sum / $num_exams;
+    $averages[$student] = round($average, 2); // Store the rounded average
 }
 
-// Affichage des résultats
+// Display results
 echo "<pre>";
-print_r($notes); // Affiche les notes de chaque élève
-print_r($moyennes); // Affiche les moyennes de chaque élève
+print_r($grades); // Display the grades for each student
+print_r($averages); // Display the averages for each student
 echo "</pre>";
 
 ?>
-
-
-
-
-
-
-
